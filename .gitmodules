@@ -19,3 +19,6 @@
 [submodule "bundle/taglist.vim"]
 	path = bundle/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/fonts"]
+	path = bundle/fonts
+	url = https://github.com/powerline/fonts.git
