@@ -11,6 +11,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'rosenfeld/conque-term'
 Plugin 'tpope/vim-fugitive'
 Plugin 'taglist.vim'
+Plugin 'tpope/vim-sleuth'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -182,7 +183,7 @@ if has("gui_running")
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+set encoding=utf-8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -467,3 +468,6 @@ map <leader>hh :TlistToggle<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>t :ConqueTerm /bin/bash<cr>
 map <leader>e :ConqueTermVSplit /bin/bash<cr>
+
+let g:Powerline_symbols= "fancy"
+set showtabline=2
