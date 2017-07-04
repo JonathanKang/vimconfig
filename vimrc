@@ -12,6 +12,7 @@ Plugin 'rosenfeld/conque-term'
 Plugin 'tpope/vim-fugitive'
 Plugin 'taglist.vim'
 Plugin 'tpope/vim-sleuth'
+Plugin 'google/vim-searchindex'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
