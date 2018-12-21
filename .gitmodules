@@ -28,3 +28,6 @@
 [submodule "bundle/vim-searchindex"]
 	path = bundle/vim-searchindex
 	url = https://github.com/google/vim-searchindex.git
+[submodule "bundle/vim-mark"]
+	path = bundle/vim-mark
+	url = https://github.com/dimasg/vim-mark.git
