@@ -13,6 +13,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'taglist.vim'
 Plugin 'google/vim-searchindex'
 Plugin 'dimasg/vim-mark'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -457,3 +459,23 @@ map <leader>e :ConqueTermVSplit /bin/bash<cr>
 
 let g:Powerline_symbols= "fancy"
 set showtabline=2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ccls
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Register ccls C++ lanuage server.
+if executable('ccls')
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'ccls',
+      \ 'cmd': {server_info->['ccls']},
+      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      \ 'initialization_options': { 'cacheDirectory': '/tmp/ccls/cache' },
+      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
+endif
+" Key bindings for vim-lsp.
+nn <silent> <M-d> :LspDefinition<cr>
+nn <silent> <M-r> :LspReferences<cr>
+nn <f2> :LspRename<cr>
+nn <silent> <M-a> :LspWorkspaceSymbol<cr>
+nn <silent> <M-l> :LspDocumentSymbol<cr>
